@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ride Group App</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000000">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #000;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      font-size: 1.2em;
+    }
+
+    .container {
+      padding: 15px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .primary {
+      background: #28a745;
+      color: #fff;
+    }
+
+    .secondary {
+      background: #007bff;
+      color: #fff;
+    }
+
+    .danger {
+      background: #dc3545;
+      color: #fff;
+    }
+
+    .chat-box {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 10px;
+      height: 150px;
+      overflow-y: auto;
+      background: #fafafa;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  Ride Group App
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h3>Select Driver</h3>
+    <p>Choose your preferred driver.</p>
+    <button class="primary">View Available Drivers</button>
+  </div>
+
+  <div class="card">
+    <h3>Group Chat</h3>
+    <div class="chat-box">
+      <div><strong>Ana:</strong> Anyone going downtown?</div>
+      <div><strong>Bruno:</strong> I am.</div>
+      <div><strong>Driver:</strong> Leaving in 10 minutes.</div>
+    </div>
+    <input type="text" placeholder="Type a message">
+    <button class="secondary">Send</button>
+  </div>
+
+  <div class="card">
+    <h3>Group Management</h3>
+    <button class="primary">Join Group</button>
+    <button class="secondary">Leave Group</button>
+    <button class="danger">Block Passenger (Driver)</button>
+  </div>
+
+</div>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+  }
+</script>
+
+</body>
+</html>
